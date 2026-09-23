@@ -172,10 +172,21 @@ const PROJECT_FILTERS = [
   "AI & Computer Vision",
   "LLM & Systems",
   "Data Science",
+  "Responsible AI",
   "Software Engineering",
 ];
 
 const PROJECTS = [
+  {
+    title: "Fairness Under Unawareness: Thresholded vs. Weighted BISG",
+    period: "Nov 2025 – Dec 2025",
+    category: "Responsible AI",
+    description:
+      "Studied how race imputed with Bayesian Improved Surname Geocoding (BISG) affects fairness audits when true race is unavailable. Built an 8.9M-record NC voter pipeline and compared argmax (thresholded) vs. probability-weighted race assignment when measuring race-by-party prediction disparity against self-reported race.",
+    metrics: ["8.9M voter records", "760K-voter BISG audit", "Soft vs. hard disparity"],
+    accent: "rose",
+    link: "https://drive.google.com/drive/folders/1ypotRLTb_T6lHINPx5-TPkVeiLm0hvE4",
+  },
   {
     title: "LLM-Based AI Tutor Chatbot",
     period: "Nov 2025 – Dec 2025",
@@ -763,6 +774,17 @@ function ProjectCard({ project }) {
             </span>
           ))}
         </div>
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`group mt-5 inline-flex items-center gap-1.5 text-sm font-medium ${a.text} hover:underline`}
+          >
+            View project files
+            <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+        )}
       </GlassCard>
     </motion.div>
   );
