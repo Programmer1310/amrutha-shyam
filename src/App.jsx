@@ -178,6 +178,16 @@ const PROJECT_FILTERS = [
 
 const PROJECTS = [
   {
+    title: "Real-Time Flight Analytics on OpenSky ADS-B Data",
+    period: "Mar 2026 – May 2026",
+    category: "Data Science",
+    description:
+      "Team big data platform on OpenSky Network flight data: live airspace density maps, Spark-based CO₂ accounting over 19.2M flights, and a streaming flight-phase tracker. Built the real-time phase tab — a Kafka producer that pulls OpenSky every 30s and classifies each aircraft as taking off, cruising, or landing, served through a Flask API to a live map dashboard.",
+    metrics: ["19.2M flight records", "10K+ aircraft live", "Kafka + Spark + Docker"],
+    accent: "indigo",
+    link: "https://github.com/aravindan2/Big_data_project",
+  },
+  {
     title: "Fairness Under Unawareness: Thresholded vs. Weighted BISG",
     period: "Nov 2025",
     category: "Responsible AI",
