@@ -205,6 +205,7 @@ const PROJECTS = [
       "Benchmarked YOLOv5 and YOLOv8 on PlantSeg and PlantDoc, curating and augmenting 2,000 images and introducing Gaussian blur to boost detection accuracy.",
     metrics: ["0.864 mAP@50 (PlantSeg, v8)", "0.692 mAP@50 (PlantDoc, v8)"],
     accent: "teal",
+    link: "https://github.com/Programmer1310/yolo-plant-disease-detection",
   },
   {
     title: "GRU Tweet Authenticity Detection",
