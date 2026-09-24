@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/my_portfolio_website/',
+  base: '/amrutha-shyam/',
   build: {
     outDir: 'docs', // <--- Outputs build to /docs instead of /dist
   },
