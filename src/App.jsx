@@ -77,13 +77,6 @@ const PROFILE = {
   ],
 };
 
-const HERO_STATS = [
-  { value: "10+", label: "production API endpoints shipped at Cranium AI", accent: "indigo" },
-  { value: "0.864", label: "mAP@50 on plant disease detection (YOLOv8)", accent: "teal" },
-  { value: "19.2M", label: "flight records analyzed in a Spark + Kafka pipeline", accent: "rose" },
-  { value: "2", label: "conference presentations on fake-news detection", accent: "amber" },
-];
-
 const EDUCATION = [
   {
     school: "New York University, Tandon",
@@ -626,22 +619,6 @@ function Hero() {
           >
             LinkedIn
           </a>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.7 }}
-          className="mt-14 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-white/10 pt-8 sm:grid-cols-4"
-        >
-          {HERO_STATS.map((s) => (
-            <div key={s.value}>
-              <span className={`block text-3xl font-semibold tracking-tight sm:text-4xl ${ACCENT_MAP[s.accent].text}`}>
-                {s.value}
-              </span>
-              <span className="mt-1.5 block text-xs leading-snug text-white/45">{s.label}</span>
-            </div>
-          ))}
         </motion.div>
       </motion.div>
     </section>
