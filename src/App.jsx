@@ -70,7 +70,19 @@ const PROFILE = {
   linkedin: "https://www.linkedin.com/in/amrutha-shyam-2893a6260", // Fixed: Added https://
   github: "https://github.com/Programmer1310",
   email: "mailto:as21083@nyu.edu",
+  availability: "Open to full-time AI/ML roles · May 2027",
+  currently: [
+    "Just wrapped an AI Engineering internship at Cranium AI",
+    "Secretary of NYU Laya, NYU's classical dance club",
+  ],
 };
+
+const HERO_STATS = [
+  { value: "10+", label: "production API endpoints shipped at Cranium AI", accent: "indigo" },
+  { value: "0.864", label: "mAP@50 on plant disease detection (YOLOv8)", accent: "teal" },
+  { value: "19.2M", label: "flight records analyzed in a Spark + Kafka pipeline", accent: "rose" },
+  { value: "2", label: "conference presentations on fake-news detection", accent: "amber" },
+];
 
 const EDUCATION = [
   {
@@ -529,8 +541,11 @@ function Hero() {
           className="mb-6 flex flex-wrap items-center gap-3"
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-white/60 backdrop-blur-md">
-            <Sparkles size={13} className="text-teal-300" />
-            Available for opportunities
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-300 opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-300" />
+            </span>
+            {PROFILE.availability}
           </span>
           <span className="inline-flex items-center gap-1.5 text-xs text-white/40">
             <MapPin size={13} /> {PROFILE.location}
@@ -562,6 +577,16 @@ function Hero() {
           className="mt-6 max-w-xl text-base leading-relaxed text-white/45"
         >
           {PROFILE.pitch}
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45, duration: 0.7 }}
+          className="mt-4 max-w-2xl text-sm leading-relaxed text-white/55"
+        >
+          <span className="mr-2 text-xs font-medium uppercase tracking-widest text-teal-300/90">Currently</span>
+          {PROFILE.currently.join(" · ")}
         </motion.p>
 
         <motion.div
@@ -601,6 +626,22 @@ function Hero() {
           >
             LinkedIn
           </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.7 }}
+          className="mt-14 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-white/10 pt-8 sm:grid-cols-4"
+        >
+          {HERO_STATS.map((s) => (
+            <div key={s.value}>
+              <span className={`block text-3xl font-semibold tracking-tight sm:text-4xl ${ACCENT_MAP[s.accent].text}`}>
+                {s.value}
+              </span>
+              <span className="mt-1.5 block text-xs leading-snug text-white/45">{s.label}</span>
+            </div>
+          ))}
         </motion.div>
       </motion.div>
     </section>
