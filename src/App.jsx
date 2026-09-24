@@ -72,8 +72,8 @@ const PROFILE = {
   email: "mailto:as21083@nyu.edu",
   availability: "Open to full-time AI/ML roles · May 2027",
   currently: [
+    "Grad student at NYU",
     "Just wrapped an AI Engineering internship at Cranium AI",
-    "Secretary of NYU Laya, NYU's classical dance club",
   ],
 };
 
