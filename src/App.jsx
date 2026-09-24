@@ -13,6 +13,9 @@ import {
   Award,
   MapPin,
   Globe,
+  Cpu,
+  HeartHandshake,
+  Volleyball,
 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -903,47 +906,78 @@ function PublicationsHonors() {
 /*  BEYOND CODE                                                       */
 /* ------------------------------------------------------------------ */
 
+const BEYOND = [
+  {
+    icon: Sparkles,
+    accent: "rose",
+    title: "Bharatanatyam, since first grade",
+    body:
+      "Classical dance has been a constant in my life since first grade. I completed my Arangetram with a Certificate of Merit and have performed \"Thadadhagai\" at the Chennai Cultural Season and the Madurai Meenakshi Temple. At VIT I represented the university in inter-college contests and choreographed for Team Lasya; today I serve as Secretary of NYU Laya, NYU's classical dance club.",
+    tags: ["Arangetram · Certificate of Merit", "Secretary, NYU Laya", "Choreographer, Team Lasya"],
+  },
+  {
+    icon: Cpu,
+    accent: "amber",
+    title: "Building tech communities",
+    body:
+      "As an event organizer with IoThinc, VIT's IoT club, I helped plan the club's presence at Vibrance, the university's annual fest — running a 150-participant hackathon, a 75-participant IoT treasure hunt, stalls, and hands-on workshops. At NYU, I'm a member of the Society of Women Engineers.",
+    tags: ["150-person hackathon", "IoThinc, 2022–2024", "SWE @ NYU"],
+  },
+  {
+    icon: HeartHandshake,
+    accent: "teal",
+    title: "Leading in community service",
+    body:
+      "Served as President of the Annettes Club of the Rotary Club of Madras Midtown for 2023–2024, leading the club's service initiatives and bringing members together around community work.",
+    tags: ["President, 2023–2024", "Rotary Club of Madras Midtown"],
+  },
+  {
+    icon: Volleyball,
+    accent: "indigo",
+    title: "On the throwball court",
+    body:
+      "Off the screen, I play throwball — a fast team sport that rewards quick reads, sharp throws, and trusting your teammates.",
+    tags: ["Team sport", "Throwball player"],
+  },
+];
+
 function BeyondCode() {
   return (
     <section id="beyond" className="relative px-6 py-24" style={{ backgroundColor: BG }}>
       <div className="mx-auto max-w-5xl">
-        <SectionHeading eyebrow="Beyond code" title="Creative & cultural leadership" />
+        <SectionHeading
+          eyebrow="Beyond code"
+          title="Dance, community & the court"
+          sub="What keeps me grounded, creative, and connected outside of engineering."
+        />
         <div className="grid gap-5 sm:grid-cols-2">
-          <div className="h-full">
-            <GlassCard accent="rose">
-              <div>
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-400/10 text-rose-300">
-                  <Sparkles size={20} />
-                </span>
-                <h3 className="mt-4 text-lg font-semibold text-white">
-                  Classical dance & performance
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/55">
-                  Secretary of NYU Laya, the university's classical dance club. Completed the
-                  Bharatanatyam Arangetram with a Certificate of Merit, and performed "Thadadhagai"
-                  at the Chennai Cultural Season and the Madurai Meenakshi Temple. Previously
-                  represented VIT in inter-college dance contests and choreographed for Team Lasya,
-                  VIT's dance club.
-                </p>
+          {BEYOND.map((item) => {
+            const a = ACCENT_MAP[item.accent];
+            const Icon = item.icon;
+            return (
+              <div key={item.title} className="h-full">
+                <GlassCard accent={item.accent}>
+                  <div>
+                    <span className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 ${a.text}`}>
+                      <Icon size={20} />
+                    </span>
+                    <h3 className="mt-4 text-lg font-semibold text-white">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-white/55">{item.body}</p>
+                  </div>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {item.tags.map((t) => (
+                      <span
+                        key={t}
+                        className={`rounded-full border px-2.5 py-1 text-xs font-medium ${a.badge}`}
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </GlassCard>
               </div>
-            </GlassCard>
-          </div>
-          <div className="h-full">
-            <GlassCard accent="amber">
-              <div>
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-400/10 text-amber-300">
-                  <Award size={20} />
-                </span>
-                <h3 className="mt-4 text-lg font-semibold text-white">
-                  Technical community leadership
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/55">
-                  Organized IoT club activities and stalls at VIT's annual fest, Vibrance, and
-                  took part in related workshops and sessions from 2022 to 2024.
-                </p>
-              </div>
-            </GlassCard>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>
