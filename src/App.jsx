@@ -224,6 +224,7 @@ const PROJECTS = [
       "Cleaned and analyzed 2,500 patient billing records from KSAS Health Center, surfacing five distinct error patterns and proposing fixes that improved billing accuracy and cut patient wait times.",
     metrics: ["2,500 records", "5 error patterns found"],
     accent: "amber",
+    link: "https://drive.google.com/drive/folders/1YvLJ2rOB73M-AZWi9g6L26erWsiapBc5",
   },
   {
     title: "Smart Medicine Box",
@@ -783,7 +784,7 @@ function ProjectCard({ project }) {
             rel="noopener noreferrer"
             className={`group mt-5 inline-flex items-center gap-1.5 text-sm font-medium ${a.text} hover:underline`}
           >
-            View on GitHub
+            {project.link.includes("github.com") ? "View on GitHub" : "View project files"}
             <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         )}
