@@ -195,6 +195,7 @@ const PROJECTS = [
       "AI tutor chatbot combining an LLM with a RAG pipeline and a knowledge graph built from course materials, with full speech-to-text and text-to-speech for voice and text-based learning.",
     metrics: ["RAG + Knowledge Graph", "Voice-enabled"],
     accent: "indigo",
+    link: "https://github.com/Programmer1310/erica_graph_rag_notebooks",
   },
   {
     title: "YOLO Plant Disease Detection & Pesticide Recommendation",
