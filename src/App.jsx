@@ -188,6 +188,16 @@ const PROJECTS = [
     link: "https://github.com/aravindan2/Big_data_project",
   },
   {
+    title: "Bharatanatyam Pose Classifier",
+    period: "Feb 2026",
+    category: "AI & Computer Vision",
+    description:
+      "A side project born from my love of Bharatanatyam and inspired by sign-language recognition work in CV. Recognizes dance stances (Standing, Aramandi, Muzhumandi) live from a webcam using YOLOv8-pose keypoints, joint-angle rules, and a KNN classifier with temporal smoothing. More adavus and poses to come.",
+    metrics: ["Real-time webcam", "YOLOv8-pose + KNN", "3 stances (and growing)"],
+    accent: "amber",
+    link: "https://github.com/Programmer1310/bharatanatyam-pose-classifier",
+  },
+  {
     title: "Fairness Under Unawareness: Thresholded vs. Weighted BISG",
     period: "Nov 2025",
     category: "Responsible AI",
